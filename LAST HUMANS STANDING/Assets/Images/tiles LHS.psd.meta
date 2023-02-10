@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tiles LHS_0
+      name: block_tiles LHS_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1013,6 +1013,7 @@ TextureImporter:
       tiles LHS_18: -73371477
       tiles LHS_8: 1563066941
       tiles LHS_2: 1564700603
+      block_tiles LHS_0: 1833286526
       tiles LHS_4: 263959601
       tiles LHS_10: -457456606
       tiles LHS_32: -1523074183
@@ -1040,10 +1041,9 @@ TextureImporter:
       tiles LHS_28: -824492727
       tiles LHS_13: 710742919
       tiles LHS_9: 797358887
-      tiles LHS_15: 1988993092
       tiles LHS_24: 946827750
+      tiles LHS_15: 1988993092
       tiles LHS_31: 223057317
-      tiles LHS_0: 1833286526
       tiles LHS_11: 1346704810
       tiles LHS_26: 20586466
       tiles LHS_29: 1489331138
