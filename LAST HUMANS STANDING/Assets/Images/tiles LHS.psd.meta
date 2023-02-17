@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles LHS_32
+      name: tiles selection
       rect:
         serializedVersion: 2
         x: 0
@@ -1016,11 +1016,11 @@ TextureImporter:
       block_tiles LHS_0: 1833286526
       tiles LHS_4: 263959601
       tiles LHS_10: -457456606
-      tiles LHS_32: -1523074183
       tiles LHS_12: -1354616675
       tiles LHS_33: 701020388
       tiles LHS_36: 159260890
       tiles LHS_1: 1596970279
+      tiles selection: -1523074183
       tiles LHS_5: 662404377
       tiles LHS_37: -466907788
       tiles LHS_19: 257168839
@@ -1035,9 +1035,9 @@ TextureImporter:
       tiles LHS_16: -145182066
       tiles LHS_39: -1362632683
       tiles LHS_6: -1413766045
-      tiles LHS_40: 789702068
-      tiles LHS_27: -1999405830
       tiles LHS_42: 402019821
+      tiles LHS_27: -1999405830
+      tiles LHS_40: 789702068
       tiles LHS_28: -824492727
       tiles LHS_13: 710742919
       tiles LHS_9: 797358887
