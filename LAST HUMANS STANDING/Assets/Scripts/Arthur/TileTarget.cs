@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class TileTarget : MonoBehaviour
 {
+    public float Dirx = 0f;public float Diry = 0f;public float Dirz = 0f;
     public Camera cam;
     public Tilemap tilemap;
     public Vector3Int cellPos;
@@ -20,8 +21,7 @@ public class TileTarget : MonoBehaviour
 
         cellPos = tilemap.WorldToCell(v);
 
-        transform.position = tilemap.CellToWorld(cellPos);
-        
+        transform.position = tilemap.CellToWorld(cellPos)+new Vector3(Dirx,Diry,Dirz);
         tileOn = tilemap.GetTile(cellPos);
         if(tileOn != null )
         {
