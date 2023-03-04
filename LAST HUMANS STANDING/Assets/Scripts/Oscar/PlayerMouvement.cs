@@ -5,16 +5,20 @@ using UnityEngine;
 public class PlayerMouvement : MonoBehaviour
 {
     public Transform teleport;
+    public GameObject playerTileMaps;
 
-    void Teleportation()
+    public void Teleportation()
     {
          if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             gameObject.transform.position = teleport.transform.position;
+            playerTileMaps.transform.position = teleport.transform.position;
+            playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
+
         }
     }
     void Update()
     {
-        Teleportation();
+        
     }
 }
