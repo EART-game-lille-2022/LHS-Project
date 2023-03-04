@@ -14,6 +14,7 @@ public class TileTarget : MonoBehaviour
 
     public Direction sampleDir;
     public Direction[] ennemyPattern;
+
     void Update() {
         Vector3 v = cam.ScreenToWorldPoint( Input.mousePosition );
         v.z = 0;
