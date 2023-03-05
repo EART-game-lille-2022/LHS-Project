@@ -4580,6 +4580,7 @@ GameObject:
   - component: {fileID: 168235414}
   - component: {fileID: 168235413}
   - component: {fileID: 168235416}
+  - component: {fileID: 168235417}
   m_Layer: 0
   m_Name: Map Kill
   m_TagString: Untagged
@@ -4847,6 +4848,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8444867, y: 1.4110854}
   m_EdgeRadius: 0
+--- !u!114 &168235417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168235411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f225143afd3c3894292f12544c00e253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerStay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 227027052}
+        m_TargetAssemblyTypeName: TileTarget, Assembly-CSharp
+        m_MethodName: OnTriggerStay2D
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &227027051
 GameObject:
   m_ObjectHideFlags: 0
@@ -11781,9 +11815,10 @@ GameObject:
   - component: {fileID: 1999121682}
   - component: {fileID: 1999121681}
   - component: {fileID: 1999121683}
+  - component: {fileID: 1999121684}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11836,3 +11871,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0096434355, y: 0.089999974}
   m_Size: {x: 0.32240695, y: 0.3323648}
   m_Direction: 0
+--- !u!50 &1999121684
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999121680}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
