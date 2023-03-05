@@ -10,7 +10,7 @@ public class PlayerMouvement : MonoBehaviour
 
     public void Teleportation()
     {
-         if (Input.GetKey(KeyCode.Mouse0))
+         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             gameObject.transform.position = teleport.transform.position;
             playerTileMaps.transform.position = teleport.transform.position;
