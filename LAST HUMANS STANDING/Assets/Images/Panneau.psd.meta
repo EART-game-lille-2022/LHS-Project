@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3be74caebb244c845a5b6c3edddea253
+guid: 97fa78c3afaf9ba4bbb072edb0aa2373
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -69,8 +69,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,106 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Elements UI_0
+      name: Panneau_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 241
-        width: 104
-        height: 152
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 113
+        y: 163
+        width: 668
+        height: 632
+      alignment: 9
+      pivot: {x: 0.5385524, y: 0.010866286}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a34d7a7df1b24748baefc3a846c040e
-      internalID: -280516042
+      spriteID: 9ad9aabd03406634995a1e9846fd2ab2
+      internalID: 259417852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elements UI_1
+      name: Panneau_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 357
-        width: 29
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1404
+        y: 419
+        width: 446
+        height: 550
+      alignment: 9
+      pivot: {x: 0.39606425, y: 0.01716869}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bf3fea3fe2cdaa4f8200257781ab371
-      internalID: -1842314062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Elements UI_2
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 184
-        width: 115
-        height: 205
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 098afd8513492eb42abeab2dbf4e660e
-      internalID: -293016584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Elements UI_3
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 319
-        width: 27
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12230c92310b1644da545cf101c32d9e
-      internalID: 1138495391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Elements UI_4
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 6
-        width: 188
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1715fea7a36dcbe409d03c997e367c8d
-      internalID: 1767895720
+      spriteID: af0abfb070800784e9207fc63463cb8d
+      internalID: -1261404256
       vertices: []
       indices: 
       edges: []
@@ -232,11 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Elements UI_1: -1842314062
-      Elements UI_4: 1767895720
-      Elements UI_2: -293016584
-      Elements UI_3: 1138495391
-      Elements UI_0: -280516042
+      Panneau_0: 259417852
+      Panneau_1: -1261404256
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
