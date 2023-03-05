@@ -38,7 +38,7 @@ public class TileTarget : MonoBehaviour
     }
     void Verification()
     {
-        if (tileDebug != null||tileDebug.ToString() != null || tileDebug.ToString().Contains("ground")) ; 
+        if (tileDebug != null||tileDebug.ToString() != null || tileDebug.ToString().Contains("ground")) 
         {
             if (tilePortee!= null || tilePortee.ToString() != null)
             {
