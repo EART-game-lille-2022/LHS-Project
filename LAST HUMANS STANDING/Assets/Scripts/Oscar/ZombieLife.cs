@@ -24,7 +24,7 @@ public class ZombieLife : MonoBehaviour
         MaxHealth = 5;
         health = MaxHealth;
     }
-
+    public int amount;
     public void Damage(int Amount)
 {
     health -= Amount;

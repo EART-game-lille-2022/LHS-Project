@@ -4579,6 +4579,7 @@ GameObject:
   - component: {fileID: 168235415}
   - component: {fileID: 168235414}
   - component: {fileID: 168235413}
+  - component: {fileID: 168235416}
   m_Layer: 0
   m_Name: Map Kill
   m_TagString: Untagged
@@ -4711,16 +4712,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -1, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 0, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -4769,7 +4760,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: d2d8b100b367f02488b33182b874c372, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -4778,12 +4769,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {fileID: 701020388, guid: fc4318e93a3055f47a6319e554e90aa5, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data:
       e00: 1
       e01: 0
@@ -4804,7 +4795,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 3.994e-41, g: 3.994e-41, b: 3.994e-41, a: 3.994e-41}
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -4830,6 +4821,32 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &168235416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168235411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.023874521, y: -0.27664745}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8444867, y: 1.4110854}
+  m_EdgeRadius: 0
 --- !u!1 &227027051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4841,7 +4858,6 @@ GameObject:
   - component: {fileID: 227027054}
   - component: {fileID: 227027053}
   - component: {fileID: 227027052}
-  - component: {fileID: 227027055}
   m_Layer: 0
   m_Name: TileTarget
   m_TagString: Untagged
@@ -4861,19 +4877,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146295c20c6a4e14f9adf80a95ee4346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dirx: 0
-  Diry: 0.25
-  Dirz: 0
   cam: {fileID: 519420031}
   tilemapPortee: {fileID: 429016715}
   tilemapDebug: {fileID: 552837191}
+  tilemapKill: {fileID: 168235415}
   cellPosPortee: {x: 0, y: 0, z: 0}
   cellPosDebug: {x: 0, y: 0, z: 0}
+  cellPosKill: {x: 0, y: 0, z: 0}
   tilePortee: {fileID: 0}
   tileDebug: {fileID: 0}
+  tileKill: {fileID: 0}
   sampleDir: 0
   ennemyPattern: 
   playerMvt: {fileID: 818171557}
+  lifeZ: {fileID: 1999121681}
+  Zombie: {fileID: 1999121680}
+  ZombieInZone: 0
 --- !u!212 &227027053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4934,38 +4953,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227027051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002695769, y: 0.8482638, z: 5.337977}
+  m_LocalPosition: {x: -0.002695769, y: 0.5982638, z: 5.337977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 818171556}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227027055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227027051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d93609a1bf3ee42b34859cc64e69fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dirx: 0
-  Diry: 0.25
-  Dirz: 0
-  cam: {fileID: 519420031}
-  tilemapPortee: {fileID: 168235415}
-  tilemapDebug: {fileID: 552837191}
-  cellPosPortee: {x: 0, y: 0, z: 0}
-  cellPosDebug: {x: 0, y: 0, z: 0}
-  tilePortee: {fileID: 0}
-  tileDebug: {fileID: 0}
-  sampleDir: 0
-  ennemyPattern: 
-  playerMvt: {fileID: 818171557}
 --- !u!1 &429016712
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,7 +11344,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 21180882}
-  - {fileID: 227027054}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11368,6 +11361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleport: {fileID: 227027054}
   playerTileMaps: {fileID: 429016712}
+  playerTileMapKill: {fileID: 168235411}
 --- !u!1 &1320478428
 GameObject:
   m_ObjectHideFlags: 0
@@ -11636,7 +11630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434246527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7794352, y: 1.784, z: 0.0033879182}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11809,6 +11803,7 @@ MonoBehaviour:
   health: 0
   ZombieDamageClip: {fileID: 0}
   MaxHealth: 0
+  amount: 5
 --- !u!4 &1999121682
 Transform:
   m_ObjectHideFlags: 0
@@ -11817,7 +11812,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999121680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -1.1, z: -0.0033879182}
+  m_LocalPosition: {x: 0, y: 0.608, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11825,18 +11820,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1999121683
-MonoBehaviour:
+--- !u!70 &1999121683
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999121680}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1256a3d83ec8547bea687c1b60daad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  ZombieDamageClip: {fileID: 0}
-  MaxHealth: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0096434355, y: 0.089999974}
+  m_Size: {x: 0.32240695, y: 0.3323648}
+  m_Direction: 0
