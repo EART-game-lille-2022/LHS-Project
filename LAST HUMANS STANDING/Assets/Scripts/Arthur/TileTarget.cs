@@ -20,7 +20,7 @@ public class TileTarget : MonoBehaviour
     private CapsuleCollider2D zombieCollider;
 
     void Update() {
-        Vector3 v = cam.ScreenToWorldPoint( Input.mousePosition );
+        Vector3 v = cam.ScreenToWorldPoint(Input.mousePosition);
         v.z = 0;
         // transform.position = v;
 
@@ -59,13 +59,12 @@ public class TileTarget : MonoBehaviour
         }
     }
     public bool ZombieInZone = false;
-    void OnTriggerStay2D(Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
-        print("ta race fdp de point virgule");
-        if(zombieCollider == other)
+        print("ta");
+        if(other.CompareTag("Ennemy"))
         {
             ZombieInZone = true;
-
         }
     }
     // void OnTriggerExit2D(Collider2D other)
