@@ -31,17 +31,18 @@ public class ZombieLife : MonoBehaviour
     public void Damage(int Amount)
     {
         health -= Amount;
-        AudioManager.Instance.PlaySFX(ZombieDamageClip);
         Death();
+        // AudioManager.Instance.PlaySFX(ZombieDamageClip);
     }
 
     public void Death()
     {
         if(health <= 0)
         {
-            battleSystem.FinishFight();
-            gameObject.SetActive(false);
-            // Debug.Log("Death");
+            // battleSystem.FinishFight();
+            // gameObject.SetActive(false);
+            Destroy(gameObject);
+            Debug.Log("Death");
         }
     }
 }
