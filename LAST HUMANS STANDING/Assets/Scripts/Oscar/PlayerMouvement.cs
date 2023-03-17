@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMouvement : MonoBehaviour
+public class PlayerMouvement : TurnBasedBehaviour
 {
     public Transform teleport;
     public GameObject playerTileMaps;
@@ -23,5 +23,22 @@ public class PlayerMouvement : MonoBehaviour
     void Update()
     {
         
+    }
+    public GameObject canvas;
+    public override void BeginTurn()
+    {
+        base.BeginTurn();
+        Debug.Log("it s my turn : " + name);
+        // if(Distance > 5)
+        // Invoke("EndTurn", 3);
+        // else  PlayerAttack()
+
+        if(canvas!= null) canvas.SetActive(true);
+    }
+
+    public override void EndTurn()
+    {
+        base.EndTurn();
+        if (canvas != null) canvas.SetActive(false);
     }
 }

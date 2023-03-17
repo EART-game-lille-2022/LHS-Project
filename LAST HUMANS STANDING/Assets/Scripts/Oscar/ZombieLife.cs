@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZombieLife : MonoBehaviour
 {
+    public static List<ZombieLife> zombies = new List<ZombieLife>();
     [SerializeField] int health;
     [SerializeField] AudioClip ZombieDamageClip;
     [SerializeField] int MaxHealth;
@@ -31,7 +32,9 @@ public class ZombieLife : MonoBehaviour
     public void Damage(int Amount)
     {
         health -= Amount;
-        Death();
+        Debug.Log(name + " dmg " + Amount + " -> " + health);
+        if(health <= 0)
+            Death();
         // AudioManager.Instance.PlaySFX(ZombieDamageClip);
     }
 
@@ -44,5 +47,14 @@ public class ZombieLife : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Death");
         }
+    }
+
+    private void OnEnable()
+    {
+        zombies.Add(this);
+    }
+    private void OnDisable()
+    {
+        zombies.Remove(this);
     }
 }
