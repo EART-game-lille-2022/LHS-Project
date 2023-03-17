@@ -1,0 +1,12 @@
+controls clique gauche et clique droit
+
+nous n'avons pas réussi a résoudre :
+le personnage qui passe dans les murs 
+le personnage qui peut se déplacer même si la tilemap de déplacement est désactivée
+le bouton switch action crée des bugs qui fait revenir le combat a l'état d'initialisation du combat
+et plein d'autres choses
+la tilemap Debug est censé servir de reference pour savoir si le éplacement est possible il fonctionne avec Map déplacement
+
+il manque énormément de contenu mais le proto est porteur d'espoir car on commence a vraiment assimiler le fonctionnement des tilemaps et autres
+
+bref bon test!
