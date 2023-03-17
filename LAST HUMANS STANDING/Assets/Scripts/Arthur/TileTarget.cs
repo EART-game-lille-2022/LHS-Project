@@ -43,19 +43,20 @@ public class TileTarget : MonoBehaviour
     }
     void Verification()
     {
-        if (tileDebug != null||tileDebug.ToString() != null || tileDebug.ToString().Contains("ground")) 
-        {
+        // if (tileDebug != null||tileDebug.ToString() != null || tileDebug.ToString().Contains("ground")) 
+        // {
             if (tilePortee!= null || tilePortee.ToString() != null)
             {
                 playerMvt.Teleportation();
             }
-        }
+        // }
     }
     void Attackable()
     { 
         if (Input.GetKey(KeyCode.Mouse1) && ZombieInZone)
         {
             lifeZ.Damage(lifeZ.amount);
+            Debug.Log("damage");
         }
     }
     public bool ZombieInZone = false;
