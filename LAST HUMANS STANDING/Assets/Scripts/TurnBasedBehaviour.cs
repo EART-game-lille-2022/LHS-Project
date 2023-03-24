@@ -7,11 +7,11 @@ public class TurnBasedBehaviour : MonoBehaviour
     public int initiative;
     protected virtual void OnEnable()
     {
-        TurnManager.instance.turners.Add(this);
+        TurnManager.turners.Add(this);
     }
     protected virtual void OnDisable()
     {
-        TurnManager.instance.turners.Remove(this);
+        TurnManager.turners.Remove(this);
     }
     public bool isMyturn;
     public virtual void BeginTurn() {

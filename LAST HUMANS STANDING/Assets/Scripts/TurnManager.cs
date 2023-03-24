@@ -7,13 +7,18 @@ using System.Linq;
 public class TurnManager : MonoBehaviour
 {
     public static TurnManager instance;
-    public List<TurnBasedBehaviour> turners;
+    public static List<TurnBasedBehaviour> turners = new List<TurnBasedBehaviour>();
+    public void Awake()
+    {
+        instance = this;
+    }
     public void OnEnable()
     {
         instance = this;
     }
-    public void Start()
+    public IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
         OrderList();
         turners[0].BeginTurn();
     }
