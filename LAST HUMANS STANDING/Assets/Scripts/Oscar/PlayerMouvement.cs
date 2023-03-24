@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMouvement : MonoBehaviour
+{
+    public Transform teleport;
+    public GameObject playerTileMaps;
+    public GameObject playerTileMapKill;
+
+    public void Teleportation()
+    {
+         if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            gameObject.transform.position = teleport.transform.position;
+            playerTileMaps.transform.position = teleport.transform.position;
+            playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
+            playerTileMapKill.transform.position = teleport.transform.position;
+            playerTileMapKill.transform.position += new Vector3(0, 0.25f, 0);
+
+        }
+    }
+    void Update()
+    {
+        
+    }
+}
