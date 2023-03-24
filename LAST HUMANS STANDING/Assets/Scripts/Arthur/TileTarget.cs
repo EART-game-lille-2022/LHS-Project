@@ -8,9 +8,9 @@ using UnityEngine.Tilemaps;
 public class TileTarget : MonoBehaviour
 {
     public Camera cam;
-    public Tilemap tilemapPortee, tilemapDebug, tilemapKill;
-    public Vector3Int cellPosPortee, cellPosDebug, cellPosKill;
-    public TileBase tilePortee, tileDebug, tileKill;
+    public Tilemap tilemapPortee, tilemapDebug, tilemapKill, tilemapGun;
+    public Vector3Int cellPosPortee, cellPosDebug, cellPosKill, cellPosGun;
+    public TileBase tilePortee, tileDebug, tileKill, tileGun;
     public Direction sampleDir;
     public Direction[] ennemyPattern;
     public PlayerMouvement playerMvt;
@@ -27,11 +27,13 @@ public class TileTarget : MonoBehaviour
         cellPosDebug = tilemapDebug.WorldToCell(v);
         cellPosPortee = tilemapPortee.WorldToCell(v);
         cellPosKill = tilemapKill.WorldToCell(v);
+        cellPosGun = tilemapGun.WorldToCell(v);
 
         transform.position = tilemapDebug.CellToWorld(cellPosDebug)+new Vector3(0, 0.25f, 0);
         tileDebug = tilemapDebug.GetTile(cellPosDebug);
         tilePortee = tilemapPortee.GetTile(cellPosPortee);
         tileKill = tilemapKill.GetTile(cellPosKill);
+        tileGun = tilemapGun.GetTile(cellPosGun);
         Verification();
         Attackable();
         lifeZ.Death();

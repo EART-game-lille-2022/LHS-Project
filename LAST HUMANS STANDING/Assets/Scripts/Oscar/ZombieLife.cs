@@ -40,8 +40,8 @@ public class ZombieLife : MonoBehaviour
         if(health <= 0)
         {
             // battleSystem.FinishFight();
-            // gameObject.SetActive(false);
-            Destroy(gameObject);
+             gameObject.SetActive(false);
+            // Destroy(gameObject);
             Debug.Log("Death");
         }
     }
