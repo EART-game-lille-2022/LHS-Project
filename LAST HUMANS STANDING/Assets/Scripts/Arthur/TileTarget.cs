@@ -14,15 +14,18 @@ public class TileTarget : MonoBehaviour
     public Direction sampleDir;
     public Direction[] ennemyPattern;
     public PlayerMouvement playerMvt;
-    public ZombieLife lifeZ;
+
     public GameObject Zombie;
     private TilemapCollider2D tileCollider;
     private CapsuleCollider2D zombieCollider;
 
-    void Update() {
+    public void DoUpdate() 
+    {
+        if (!playerMvt.isMyturn) return;
+
         Vector3 v = cam.ScreenToWorldPoint(Input.mousePosition);
         v.z = 0;
-        // transform.position = v;
+        transform.position = v;
 
         cellPosDebug = tilemapDebug.WorldToCell(v);
         cellPosPortee = tilemapPortee.WorldToCell(v);
@@ -36,32 +39,35 @@ public class TileTarget : MonoBehaviour
         tileGun = tilemapGun.GetTile(cellPosGun);
         Verification();
         Attackable();
-        lifeZ.Death();
-        // if(tileOn != null )
-        // {
-        //     Debug.Log(tileOn.name.Contains("block"));
-        // }
-        // tileForward= tilemap.GetTile(cellPos);
     }
+
     void Verification()
     {
+        if (tileDebug != null && tileDebug.name.Contains("wall")) return;
         // if (tileDebug != null||tileDebug.ToString() != null || tileDebug.ToString().Contains("ground")) 
         // {
-            if (tilePortee!= null || tilePortee.ToString() != null)
-            {
                 playerMvt.Teleportation();
-            }
         // }
     }
+
     void Attackable()
     { 
-        if (Input.GetKey(KeyCode.Mouse1) && ZombieInZone)
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            lifeZ.Damage(lifeZ.amount);
-            Debug.Log("damage");
+
+            /*lifeZ.Damage(lifeZ.amount);
+            Debug.Log("damage");*/
+            foreach(var z in ZombieLife.zombies)
+            {
+                Vector2 lp = z.transform.position - transform.position;
+                if(lp.magnitude < .5f) {
+                    z.Damage(z.amount);
+                    return;
+                }
+            }
         }
     }
-    public bool ZombieInZone = false;
+    /*public bool ZombieInZone = false;
     public void OnTriggerStay2D(Collider2D other)
     {
         print("ta");
@@ -69,7 +75,7 @@ public class TileTarget : MonoBehaviour
         {
             ZombieInZone = true;
         }
-    }
+    }*/
     // void OnTriggerExit2D(Collider2D other)
     // {
     //     if(zombieCollider == other)
