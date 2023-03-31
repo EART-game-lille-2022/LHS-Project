@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -38,7 +38,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator StartFight()
     {
         textGO.SetActive(true);
-        textTMP.text = "un zombie vous a repéré!";
+        textTMP.text = "un zombie vous a repï¿½rï¿½!";
         yield return new WaitForSeconds(1);
         textTMP.text = "tuez le !";
         yield return new WaitForSeconds(1);
@@ -89,7 +89,7 @@ public class BattleSystem : MonoBehaviour
     public void FinishFight()
     {
         state = BattleState.WIN;
-        StartCoroutine(Message("Bien joué il n'y a plus d'ennemis"));
+        StartCoroutine(Message("Bien jouï¿½ il n'y a plus d'ennemis"));
         state = BattleState.NOFIGHT;
         tilemapPortee.SetActive(true);
         tilemapvisee.SetActive(false);
