@@ -43,12 +43,13 @@ public class TileTarget : MonoBehaviour
 
     void Verification()
     {
-        if (tileDebug != null) Debug.Log("Do update : " + tileDebug.name);
-        if (tileDebug == null || tileDebug.name.Contains("wall")) return;
-        // if (tileDebug != null||tileDebug.ToString() != null || tileDebug.ToString().Contains("ground")) 
-        // {
-                playerMvt.Teleportation();
-        // }
+        if (tileDebug != null)
+            Debug.Log("Do update : " + tileDebug.name);
+
+        if (tileDebug == null || tilePortee == null || tileDebug.name.Contains("wall")) 
+            return;
+        
+        playerMvt.Teleportation();
     }
 
     void Attackable()
