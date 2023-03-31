@@ -8,6 +8,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     public GameObject playerTileMaps;
     public GameObject playerTileMapKill;
     public bool canMove;
+    public int deplacementPoint;
 
     public void Teleportation()
     {
@@ -18,11 +19,12 @@ public class PlayerMouvement : TurnBasedBehaviour
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
             playerTileMapKill.transform.position = teleport.transform.position;
             playerTileMapKill.transform.position += new Vector3(0, 0.25f, 0);
-            // deplacementPoint -=1;
-            // if(deplacementPoint <= 0)
-            // {
-            //     EndTurn();
-            // }
+            deplacementPoint -=1;
+            if(deplacementPoint <= 0)
+            {
+                print("endturn");
+                EndTurn();
+            }
 
         //}
         EndTurn();
@@ -34,6 +36,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     public GameObject canvas;
     public override void BeginTurn()
     {
+        deplacementPoint = 1;
         base.BeginTurn();
         Debug.Log("it s my turn : " + name);
         // if(Distance > 5)
