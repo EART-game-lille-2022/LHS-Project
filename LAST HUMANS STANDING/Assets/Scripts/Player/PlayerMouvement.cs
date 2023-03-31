@@ -7,6 +7,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     public Transform teleport;
     public GameObject playerTileMaps;
     public GameObject playerTileMapKill;
+    public bool canMove;
 
     public void Teleportation()
     {
@@ -17,6 +18,11 @@ public class PlayerMouvement : TurnBasedBehaviour
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
             playerTileMapKill.transform.position = teleport.transform.position;
             playerTileMapKill.transform.position += new Vector3(0, 0.25f, 0);
+            // deplacementPoint -=1;
+            // if(deplacementPoint <= 0)
+            // {
+            //     EndTurn();
+            // }
 
         //}
         EndTurn();

@@ -8,6 +8,7 @@ public class TurnManager : MonoBehaviour
 {
     public static TurnManager instance;
     public static List<TurnBasedBehaviour> turners = new List<TurnBasedBehaviour>();
+    public CameraController camUpdate;
     public void Awake()
     {
         instance = this;
