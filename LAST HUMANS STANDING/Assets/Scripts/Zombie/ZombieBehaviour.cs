@@ -42,10 +42,14 @@ public class ZombieBehaviour : TurnBasedBehaviour
 
     public override void BeginTurn()
     {
+        // CameraController switchCam = GetComponent<CameraController>();
         base.BeginTurn();
         Debug.Log("it s my turn : " + name);
+        // switchCam.Update();
+
         // if(Distance > 5)
             Invoke("EndTurn", 3);
         // else  PlayerAttack()
     }
+    
 }
