@@ -26,7 +26,6 @@ public class TurnManager : MonoBehaviour
     {
         turners = turners.OrderBy( (turn) => -turn.initiative).ToList();
     }
-    public CameraController camUpdate;
     public void NextTurn(TurnBasedBehaviour turn)
     {
         int index = turners.IndexOf(turn) + 1;
