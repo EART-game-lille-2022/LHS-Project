@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
-public enum BattleState { NOFIGHT,STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI, WIN, LOOSE}
+public enum BattleState { NOFIGHT,STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI, WIN, LOOSE }
 public class BattleSystem : MonoBehaviour
 {
     public BattleState state;
