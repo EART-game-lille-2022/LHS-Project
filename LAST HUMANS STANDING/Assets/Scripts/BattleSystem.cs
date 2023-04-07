@@ -1,10 +1,8 @@
- using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine;
 
-public enum BattleState { NOFIGHT,STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI, WIN, LOOSE }
+public enum BattleState { NOFIGHT, STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI, WIN, LOOSE }
 public class BattleSystem : MonoBehaviour
 {
     public BattleState state;
@@ -14,7 +12,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject endTurnButton;
     public TextMeshProUGUI textTMP;
     public GameObject textGO;
-    bool activated = true;
+    bool activated = false;
 
     private void Start()
     {
@@ -62,7 +60,7 @@ public class BattleSystem : MonoBehaviour
 
     public void ChangeAction()
     {
-        
+
         if (activated)
         {
             tilemapPortee.SetActive(true);
