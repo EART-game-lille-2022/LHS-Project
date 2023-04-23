@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 64f9e8581281d4549a1931a850ad599d
   - enabled: 1
-    path: Assets/Scenes/PROTOTYPE SCENE BACKUP.unity
+    path: Assets/Scenes/Lvl 3.unity
     guid: 969dd253498fbb847864d15d677c5219
   m_configObjects: {}

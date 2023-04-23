@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMouvement : TurnBasedBehaviour
@@ -20,7 +21,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     {
         if (deplacementPoint > 0)
         {
-            gameObject.transform.position = teleport.transform.position;
+            gameObject.transform.DOMove(teleport.transform.position,0.5f);
             playerTileMaps.transform.position = teleport.transform.position;
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
             playerTileMapKill.transform.position = teleport.transform.position;
