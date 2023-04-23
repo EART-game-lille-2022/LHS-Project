@@ -14,6 +14,7 @@ public class TileTarget : MonoBehaviour
     public Direction sampleDir;
     public Direction[] ennemyPattern;
     public PlayerMouvement playerMvt;
+    public BattleSystem battleSys;
 
     public GameObject Zombie;
     private TilemapCollider2D tileCollider;
@@ -37,8 +38,8 @@ public class TileTarget : MonoBehaviour
         tilePortee = tilemapPortee.GetTile(cellPosPortee);
         tileKill = tilemapKill.GetTile(cellPosKill);
         // tileGun = tilemapGun.GetTile(cellPosGun);
-        Verification();
         Attackable();
+        Verification();
     }
 
     void Verification()
@@ -48,7 +49,7 @@ public class TileTarget : MonoBehaviour
 
         if (tileDebug == null || tilePortee == null || tileDebug.name.Contains("wall")) 
             return;
-        
+        if (battleSys.activated) return;
         playerMvt.Teleportation();
     }
 
@@ -57,8 +58,8 @@ public class TileTarget : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1))
         {
 
-            /*lifeZ.Damage(lifeZ.amount);
-            Debug.Log("damage");*/
+            //lifeZ.Damage(lifeZ.amount);
+            Debug.Log("damage");
             foreach(var z in ZombieLife.zombies)
             {
                 Vector2 lp = z.transform.position - transform.position;

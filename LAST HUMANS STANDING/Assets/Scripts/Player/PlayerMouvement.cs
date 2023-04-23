@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMouvement : TurnBasedBehaviour
@@ -10,40 +8,42 @@ public class PlayerMouvement : TurnBasedBehaviour
     public bool canMove;
     public int deplacementPoint;
 
+    private void Start()
+    {
+       teleport.transform.position = gameObject.transform.position;
+        playerTileMaps.transform.position = teleport.transform.position;
+        playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
+        playerTileMapKill.transform.position = teleport.transform.position;
+        playerTileMapKill.transform.position += new Vector3(0, 0.25f, 0);
+    }
     public void Teleportation()
     {
-        //if (Input.GetKeyDown(KeyCode.Mouse0))
-        // {
+        if (deplacementPoint > 0)
+        {
             gameObject.transform.position = teleport.transform.position;
             playerTileMaps.transform.position = teleport.transform.position;
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
             playerTileMapKill.transform.position = teleport.transform.position;
             playerTileMapKill.transform.position += new Vector3(0, 0.25f, 0);
-            deplacementPoint -=1;
-            if(deplacementPoint <= 0)
-            {
-                print("endturn");
-                EndTurn();
-            }
-
-        //}
+            deplacementPoint -= 1;
+        }
+        else
+        {
+            print("Déplacement impossible");
+        }
         EndTurn();
-    }
-    void Update()
-    {
-        
     }
     public GameObject canvas;
     public override void BeginTurn()
     {
-        deplacementPoint = 1;
+        deplacementPoint = 2;
         base.BeginTurn();
         Debug.Log("it s my turn : " + name);
         // if(Distance > 5)
         // Invoke("EndTurn", 3);
         // else  PlayerAttack()
 
-        if(canvas!= null) canvas.SetActive(true);
+        if (canvas != null) canvas.SetActive(true);
     }
 
     public override void EndTurn()

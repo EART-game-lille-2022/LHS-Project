@@ -9,6 +9,7 @@ public class ZombieLife : MonoBehaviour
     [SerializeField] AudioClip ZombieDamageClip;
     [SerializeField] int MaxHealth;
     public BattleSystem battleSystem;
+    public bool dead = false;
 
     public int Health
     {
@@ -42,6 +43,7 @@ public class ZombieLife : MonoBehaviour
     {
         if(health <= 0)
         {
+            dead = true;
             // battleSystem.FinishFight();
              gameObject.SetActive(false);
             // Destroy(gameObject);
