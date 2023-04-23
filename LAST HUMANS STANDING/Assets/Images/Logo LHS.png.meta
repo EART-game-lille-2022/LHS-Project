@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -52,7 +52,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0.28
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -116,11 +116,31 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: 1295.6249, y: -946.87494}
+      - {x: 1295.6249, y: 136.875}
+      - {x: 1274.9999, y: 185.62498}
+      - {x: 1254.3749, y: 208.12498}
+      - {x: 1201.8749, y: 236.24998}
+      - {x: -1244.9999, y: 236.24998}
+      - {x: -1288.1249, y: 219.37498}
+      - {x: -1316.2499, y: 187.49998}
+      - {x: -1336.8749, y: 155.62498}
+      - {x: -1342.4999, y: 127.49999}
+      - {x: -1342.4999, y: -935.62494}
+      - {x: -1336.8749, y: -961.87494}
+      - {x: -1318.1249, y: -993.74994}
+      - {x: -1295.6249, y: -1016.24994}
+      - {x: -1259.9999, y: -1038.75}
+      - {x: -1228.1249, y: -1042.5}
+      - {x: 1179.3749, y: -1042.5}
+      - {x: 1207.4999, y: -1038.75}
+      - {x: 1244.9999, y: -1019.99994}
+      - {x: 1274.9999, y: -991.87494}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
