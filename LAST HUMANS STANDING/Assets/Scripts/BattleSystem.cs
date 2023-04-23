@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { NOFIGHT, STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI, WIN, LOOSE }
 public class BattleSystem : MonoBehaviour
@@ -12,7 +13,9 @@ public class BattleSystem : MonoBehaviour
     public GameObject endTurnButton;
     public TextMeshProUGUI textTMP;
     public GameObject textGO;
-    public bool activated = false; 
+    public bool activated = false;
+    [SerializeField] int ZNumber;
+
 
     private void Start()
     {
@@ -22,6 +25,7 @@ public class BattleSystem : MonoBehaviour
         actionButton.SetActive(false);
         endTurnButton.SetActive(false);
         textGO.SetActive(false);
+
 
 
     }
@@ -84,15 +88,24 @@ public class BattleSystem : MonoBehaviour
 
     }
 
-    public void FinishFight()
+    IEnumerator FinishFight()
     {
         state = BattleState.WIN;
-        StartCoroutine(Message("Bien jou� il n'y a plus d'ennemis"));
         state = BattleState.NOFIGHT;
         tilemapPortee.SetActive(true);
         tilemapvisee.SetActive(false);
         actionButton.SetActive(false);
-        textGO.SetActive(false);
+        StartCoroutine(Message("Bien joue il n'y a plus d'ennemis"));
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(0);
+    }
+    public void DeathManager()
+    {
+        ZNumber--;
+        if(ZNumber <=0)
+        {
+            StartCoroutine(FinishFight());
+        }
     }
 
     IEnumerator Message(string message)

@@ -30,8 +30,8 @@ public class PlayerMouvement : TurnBasedBehaviour
         else
         {
             print("Déplacement impossible");
+            EndTurn();
         }
-        EndTurn();
     }
     public GameObject canvas;
     public override void BeginTurn()
@@ -39,6 +39,7 @@ public class PlayerMouvement : TurnBasedBehaviour
         deplacementPoint = 2;
         base.BeginTurn();
         Debug.Log("it s my turn : " + name);
+        print(deplacementPoint);
         // if(Distance > 5)
         // Invoke("EndTurn", 3);
         // else  PlayerAttack()
