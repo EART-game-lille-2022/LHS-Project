@@ -12,7 +12,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject endTurnButton;
     public TextMeshProUGUI textTMP;
     public GameObject textGO;
-    bool activated = false;
+    public bool activated = false; 
 
     private void Start()
     {
