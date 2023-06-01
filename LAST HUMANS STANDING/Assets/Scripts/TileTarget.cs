@@ -11,7 +11,8 @@ public class TileTarget : MonoBehaviour
     public TileBase tilePortee, tileDebug, tileKill;
     //public Direction sampleDir;
     //public Direction[] ennemyPattern;
-    public PlayerMouvement playerMvt;
+    public PlayerMouvement playerMove;
+    public PlayerAttack playerAttack;
     public BattleSystem battleSys;
 
     public GameObject Zombie;
@@ -20,7 +21,7 @@ public class TileTarget : MonoBehaviour
 
     public void DoUpdate()
     {
-        if (!playerMvt.isMyturn) return;
+        if (!playerMove.isMyturn) return;
 
         Vector3 v = cam.ScreenToWorldPoint(Input.mousePosition);
         v.z = 0;
@@ -48,7 +49,7 @@ public class TileTarget : MonoBehaviour
         if (tileDebug == null || tilePortee == null || tileDebug.name.Contains("wall"))
             return;
         if (battleSys.activated) return;
-        playerMvt.Teleportation();
+        playerMove.DoStep();
     }
 
     void Attackable()
@@ -63,7 +64,7 @@ public class TileTarget : MonoBehaviour
                 Vector2 lp = z.transform.position - transform.position;
                 if (lp.magnitude < .5f)
                 {
-                    z.Damage(z.amount);
+                    z.Damage(playerAttack.damageAmount);
                     return;
                 }
             }
