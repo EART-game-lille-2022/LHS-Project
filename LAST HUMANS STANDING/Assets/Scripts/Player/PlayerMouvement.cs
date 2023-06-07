@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class PlayerMouvement : TurnBasedBehaviour
 {
-  [SerializeField] public Transform teleport;
-  [SerializeField] public GameObject playerTileMaps;
-  [SerializeField] public GameObject playerTileMapKill;
-  [SerializeField] public bool canMove;
-  [SerializeField] public int deplacementPoint;
+    [SerializeField] GameObject canvas;
+    [SerializeField] public UIManager uiManager;
+    [SerializeField] public Transform teleport;
+    [SerializeField] GameObject playerTileMaps;
+    [SerializeField] GameObject playerTileMapKill;
+    [SerializeField] public bool canMove;
+    [SerializeField] public int deplacementPoint;
 
     private void Start()
     {
-       teleport.transform.position = gameObject.transform.position;
+        teleport.transform.position = gameObject.transform.position;
         playerTileMaps.transform.position = teleport.transform.position;
         playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
         playerTileMapKill.transform.position = teleport.transform.position;
@@ -21,7 +23,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     {
         if (deplacementPoint > 0)
         {
-            gameObject.transform.DOMove(teleport.transform.position,0.5f);
+            gameObject.transform.DOMove(teleport.transform.position, 0.5f);
             playerTileMaps.transform.position = teleport.transform.position;
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
             playerTileMapKill.transform.position = teleport.transform.position;
@@ -34,7 +36,7 @@ public class PlayerMouvement : TurnBasedBehaviour
             EndTurn();//SOLUTION TEMPORAIRE
         }
     }
-    public GameObject canvas;
+
     public override void BeginTurn()
     {
         deplacementPoint = 2;

@@ -82,7 +82,6 @@ public class BattleSystem : MonoBehaviour
     public void EndOfTurn()
     {
         state = BattleState.ENNEMYTURN;
-        StartCoroutine(Message("L'ennemi passe son tour"));
         state = BattleState.PLAYERTURN;
 
 

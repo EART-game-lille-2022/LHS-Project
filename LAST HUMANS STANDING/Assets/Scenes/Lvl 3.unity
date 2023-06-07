@@ -13736,7 +13736,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 20
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0.25, z: 0}
   m_MaxChunkCount: 16
@@ -14506,7 +14506,7 @@ RectTransform:
   m_Children:
   - {fileID: 137838819}
   m_Father: {fileID: 293183074}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14621,7 +14621,7 @@ GameObject:
   m_Layer: 0
   m_Name: TileTarget
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14730,6 +14730,7 @@ GameObject:
   - component: {fileID: 293183073}
   - component: {fileID: 293183072}
   - component: {fileID: 293183071}
+  - component: {fileID: 293183075}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14813,8 +14814,6 @@ RectTransform:
   - {fileID: 891475852}
   - {fileID: 1526952446}
   - {fileID: 2100239984}
-  - {fileID: 1801541172}
-  - {fileID: 700850788}
   - {fileID: 430422052}
   - {fileID: 2138943560}
   - {fileID: 203389179}
@@ -14826,6 +14825,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &293183075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293183070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a862ca852e7f9ba4286b52b7bb19f83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smartphone: {fileID: 0}
+  lifePointGameObject:
+  - {fileID: 809674995}
+  - {fileID: 369109376}
+  - {fileID: 1318604692}
+  - {fileID: 399624601}
+  - {fileID: 1356781380}
+  - {fileID: 54230904}
+  energyPointGameObject:
+  - {fileID: 391478961}
+  - {fileID: 854936876}
+  - {fileID: 623787040}
 --- !u!1 &369109376
 GameObject:
   m_ObjectHideFlags: 0
@@ -15128,7 +15151,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 20
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0.25, z: 0}
   m_MaxChunkCount: 16
@@ -15304,7 +15327,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293183074}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -23594,7 +23617,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700850787}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23605,12 +23628,12 @@ RectTransform:
   - {fileID: 399624602}
   - {fileID: 1356781381}
   - {fileID: 54230905}
-  m_Father: {fileID: 293183074}
-  m_RootOrder: 4
+  m_Father: {fileID: 1526952446}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -55, y: -70}
+  m_AnchoredPosition: {x: -55, y: -69.99998}
   m_SizeDelta: {x: 102, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &735924295
@@ -23791,12 +23814,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initiative: 10
   isMyturn: 0
+  canvas: {fileID: 293183070}
+  uiManager: {fileID: 0}
   teleport: {fileID: 227027054}
   playerTileMaps: {fileID: 429016712}
   playerTileMapKill: {fileID: 168235411}
   canMove: 0
   deplacementPoint: 0
-  canvas: {fileID: 293183070}
 --- !u!70 &818171558
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24353,7 +24377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1256a3d83ec8547bea687c1b60daad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 12
   health: 0
   LifeBar: {fileID: 0}
   ZombieDamageClip: {fileID: 0}
@@ -24367,7 +24391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959235018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.488, y: 0.3, z: -6.3983397}
+  m_LocalPosition: {x: -0.594, y: -0.201, z: -6.3983397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24965,13 +24989,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1801541172}
+  - {fileID: 700850788}
   m_Father: {fileID: 293183074}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.5, y: -102.500015}
+  m_AnchoredPosition: {x: 59.6, y: -102.500015}
   m_SizeDelta: {x: 115, y: 205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1526952447
@@ -25101,6 +25127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9088736696801814506, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814507, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: battleSystem
       value: 
@@ -25190,7 +25220,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801541171}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25198,8 +25228,8 @@ RectTransform:
   - {fileID: 391478962}
   - {fileID: 854936877}
   - {fileID: 623787041}
-  m_Father: {fileID: 293183074}
-  m_RootOrder: 3
+  m_Father: {fileID: 1526952446}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -25553,7 +25583,7 @@ RectTransform:
   m_Children:
   - {fileID: 2091389264}
   m_Father: {fileID: 293183074}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -25667,15 +25697,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814504, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.04
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814504, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: -0.48999998
       objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814504, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6.3983397
       objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814504, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25710,6 +25740,10 @@ PrefabInstance:
       value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814507, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
+      propertyPath: LifeBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088736696801814507, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: battleSystem
       value: 
       objectReference: {fileID: 735924296}
@@ -25725,5 +25759,9 @@ PrefabInstance:
       propertyPath: debugTilemap
       value: 
       objectReference: {fileID: 552837191}
+    - target: {fileID: 9088736697368778619, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
