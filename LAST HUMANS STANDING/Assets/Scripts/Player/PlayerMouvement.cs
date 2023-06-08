@@ -1,29 +1,29 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMouvement : TurnBasedBehaviour
 {
-    public Transform teleport;
-    public GameObject playerTileMaps;
-    public GameObject playerTileMapKill;
-    public bool canMove;
-    public int deplacementPoint;
-    public AudioClip playerTurn;
-    public AudioClip playerStep;
+    [SerializeField] GameObject canvas;
+    [SerializeField] public UIManager uiManager;
+    [SerializeField] public Transform teleport;
+    [SerializeField] GameObject playerTileMaps;
+    [SerializeField] GameObject playerTileMapKill;
+    [SerializeField] public bool canMove;
+    [SerializeField] public int deplacementPoint;
 
     private void Start()
     {
-       teleport.transform.position = gameObject.transform.position;
+        teleport.transform.position = gameObject.transform.position;
         playerTileMaps.transform.position = teleport.transform.position;
         playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
         playerTileMapKill.transform.position = teleport.transform.position;
         playerTileMapKill.transform.position += new Vector3(0, 0.25f, 0);
     }
-    public void Teleportation()
+    public void DoStep()
     {
         if (deplacementPoint > 0)
         {
-            AudioManager.Instance.PlaySFX(playerStep);
-            gameObject.transform.position = teleport.transform.position;
+            gameObject.transform.DOMove(teleport.transform.position, 0.5f);
             playerTileMaps.transform.position = teleport.transform.position;
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
             playerTileMapKill.transform.position = teleport.transform.position;
@@ -32,16 +32,15 @@ public class PlayerMouvement : TurnBasedBehaviour
         }
         else
         {
-            print("Dï¿½placement impossible");
-            EndTurn();
+            print("Déplacement impossible");
+            EndTurn();//SOLUTION TEMPORAIRE
         }
     }
-    public GameObject canvas;
+
     public override void BeginTurn()
     {
         deplacementPoint = 2;
         base.BeginTurn();
-        AudioManager.Instance.PlaySFX(playerTurn);
         Debug.Log("it s my turn : " + name);
         print(deplacementPoint);
         // if(Distance > 5)

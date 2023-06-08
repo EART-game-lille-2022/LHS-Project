@@ -1,28 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 
 public class TileTarget : MonoBehaviour
 {
-    [SerializeField] AudioClip GunAudioClip; 
     public Camera cam;
     public Tilemap tilemapPortee, tilemapDebug, tilemapKill;
     public Vector3Int cellPosPortee, cellPosDebug, cellPosKill;
     public TileBase tilePortee, tileDebug, tileKill;
-    public Direction sampleDir;
-    public Direction[] ennemyPattern;
-    public PlayerMouvement playerMvt;
+    //public Direction sampleDir;
+    //public Direction[] ennemyPattern;
+    public PlayerMouvement playerMove;
+    public PlayerAttack playerAttack;
     public BattleSystem battleSys;
+
     public GameObject Zombie;
     private TilemapCollider2D tileCollider;
     private CapsuleCollider2D zombieCollider;
 
-    public void DoUpdate() 
+    public void DoUpdate()
     {
-        if (!playerMvt.isMyturn) return;
+        if (!playerMove.isMyturn) return;
 
         Vector3 v = cam.ScreenToWorldPoint(Input.mousePosition);
         v.z = 0;
@@ -33,7 +32,7 @@ public class TileTarget : MonoBehaviour
         cellPosKill = tilemapKill.WorldToCell(v);
         // cellPosGun = tilemapGun.WorldToCell(v);
 
-        transform.position = tilemapDebug.CellToWorld(cellPosDebug)+new Vector3(0, 0.25f, 0);
+        transform.position = tilemapDebug.CellToWorld(cellPosDebug) + new Vector3(0, 0.25f, 0);
         tileDebug = tilemapDebug.GetTile(cellPosDebug);
         tilePortee = tilemapPortee.GetTile(cellPosPortee);
         tileKill = tilemapKill.GetTile(cellPosKill);
@@ -47,25 +46,25 @@ public class TileTarget : MonoBehaviour
         if (tileDebug != null)
             Debug.Log("Do update : " + tileDebug.name);
 
-        if (tileDebug == null || tilePortee == null || tileDebug.name.Contains("wall")) 
+        if (tileDebug == null || tilePortee == null || tileDebug.name.Contains("wall"))
             return;
         if (battleSys.activated) return;
-        playerMvt.Teleportation();
+        playerMove.DoStep();
     }
 
     void Attackable()
-    { 
+    {
         if (Input.GetKey(KeyCode.Mouse1))
         {
 
             //lifeZ.Damage(lifeZ.amount);
             Debug.Log("damage");
-            AudioManager.Instance.PlaySFX(GunAudioClip);
-            foreach(var z in ZombieLife.zombies)
+            foreach (var z in ZombieLife.zombies)
             {
                 Vector2 lp = z.transform.position - transform.position;
-                if(lp.magnitude < .5f) {
-                    z.Damage(z.amount);
+                if (lp.magnitude < .5f)
+                {
+                    z.Damage(playerAttack.damageAmount);
                     return;
                 }
             }

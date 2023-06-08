@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
+    public int damageAmount;
     
 }
