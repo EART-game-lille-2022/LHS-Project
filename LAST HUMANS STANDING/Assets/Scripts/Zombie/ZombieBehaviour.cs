@@ -8,6 +8,7 @@ public class ZombieBehaviour : TurnBasedBehaviour
     public Collider2D col2D;
     public bool inFight;
     List<OnDisableBehaviour> onDisableBehaviours = new List<OnDisableBehaviour>();
+    public AudioClip zombieGrowl;
     public void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log(collision.gameObject + " " + collision.gameObject.tag);
@@ -44,7 +45,9 @@ public class ZombieBehaviour : TurnBasedBehaviour
     {
         // CameraController switchCam = GetComponent<CameraController>();
         base.BeginTurn();
+        AudioManager.Instance.PlaySFX(zombieGrowl);
         Debug.Log("it s my turn : " + name);
+
         // switchCam.Update();
 
         // if(Distance > 5)

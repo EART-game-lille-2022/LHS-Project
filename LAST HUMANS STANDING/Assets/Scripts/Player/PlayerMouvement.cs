@@ -7,6 +7,8 @@ public class PlayerMouvement : TurnBasedBehaviour
     public GameObject playerTileMapKill;
     public bool canMove;
     public int deplacementPoint;
+    public AudioClip playerTurn;
+    public AudioClip playerStep;
 
     private void Start()
     {
@@ -20,6 +22,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     {
         if (deplacementPoint > 0)
         {
+            AudioManager.Instance.PlaySFX(playerStep);
             gameObject.transform.position = teleport.transform.position;
             playerTileMaps.transform.position = teleport.transform.position;
             playerTileMaps.transform.position += new Vector3(0, 0.25f, 0);
@@ -29,7 +32,7 @@ public class PlayerMouvement : TurnBasedBehaviour
         }
         else
         {
-            print("Déplacement impossible");
+            print("Dï¿½placement impossible");
             EndTurn();
         }
     }
@@ -38,6 +41,7 @@ public class PlayerMouvement : TurnBasedBehaviour
     {
         deplacementPoint = 2;
         base.BeginTurn();
+        AudioManager.Instance.PlaySFX(playerTurn);
         Debug.Log("it s my turn : " + name);
         print(deplacementPoint);
         // if(Distance > 5)

@@ -15,6 +15,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject textGO;
     public bool activated = false;
     [SerializeField] int ZNumber;
+    public AudioClip finishFight;
 
 
     private void Start()
@@ -84,8 +85,6 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.ENNEMYTURN;
         StartCoroutine(Message("L'ennemi passe son tour"));
         state = BattleState.PLAYERTURN;
-
-
     }
 
     IEnumerator FinishFight()
@@ -95,6 +94,7 @@ public class BattleSystem : MonoBehaviour
         tilemapPortee.SetActive(true);
         tilemapvisee.SetActive(false);
         actionButton.SetActive(false);
+        //AudioManager.Instance.PlaySFX(finishFight);
         StartCoroutine(Message("Bien joue il n'y a plus d'ennemis"));
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(0);

@@ -10,6 +10,8 @@ public class ZombieLife : MonoBehaviour
     [SerializeField] int MaxHealth;
     public BattleSystem battleSystem;
     public bool dead = false; 
+    public AudioClip zombieDeath;
+    // float randomNumber;
 
     public int Health
     {
@@ -22,12 +24,31 @@ public class ZombieLife : MonoBehaviour
             health = value;
         }
     }
+    // public void Sound()
+    // {
+    //     print(randomNumber);
+    // }
 
     void Start()
     {
+        // randomNumber = Random.Range(0, 100);
         MaxHealth = 5;
         health = MaxHealth;
     }
+    
+    // private void Update() 
+    // {
+    //     Random();
+    //     print(randomNumber);
+    //     if(randomNumber == 1)
+    //     {
+    //         AudioManager.Instance.PlaySFX(zombieGrowl);
+    //     }
+    //     else if(randomNumber !=1)
+    //     {
+    //         print("no");
+    //     }
+    // }
 
     public int amount;
     public void Damage(int Amount)
@@ -35,7 +56,7 @@ public class ZombieLife : MonoBehaviour
         health -= Amount;
         Debug.Log(name + " dmg " + Amount + " -> " + health);
         if(health <= 0)
-            Death();
+        Death();
         // AudioManager.Instance.PlaySFX(ZombieDamageClip);
     }
 
@@ -49,8 +70,7 @@ public class ZombieLife : MonoBehaviour
             // Destroy(gameObject);
             Debug.Log("Death");
             battleSystem.DeathManager();
-    
-            
+            AudioManager.Instance.PlaySFX(zombieDeath);
         }
     }
 

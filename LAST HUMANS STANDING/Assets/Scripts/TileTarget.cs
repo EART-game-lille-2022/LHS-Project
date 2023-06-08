@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 
 public class TileTarget : MonoBehaviour
 {
+    [SerializeField] AudioClip GunAudioClip; 
     public Camera cam;
     public Tilemap tilemapPortee, tilemapDebug, tilemapKill;
     public Vector3Int cellPosPortee, cellPosDebug, cellPosKill;
@@ -15,7 +16,6 @@ public class TileTarget : MonoBehaviour
     public Direction[] ennemyPattern;
     public PlayerMouvement playerMvt;
     public BattleSystem battleSys;
-
     public GameObject Zombie;
     private TilemapCollider2D tileCollider;
     private CapsuleCollider2D zombieCollider;
@@ -60,6 +60,7 @@ public class TileTarget : MonoBehaviour
 
             //lifeZ.Damage(lifeZ.amount);
             Debug.Log("damage");
+            AudioManager.Instance.PlaySFX(GunAudioClip);
             foreach(var z in ZombieLife.zombies)
             {
                 Vector2 lp = z.transform.position - transform.position;
