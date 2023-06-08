@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public enum BattleState { NOFIGHT, STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI, WIN, LOOSE }
 public class BattleSystem : MonoBehaviour
 {
-    public BattleState state;
-    public GameObject tilemapPortee;
-    public GameObject tilemapvisee;
-    public GameObject actionButton;
-    public GameObject endTurnButton;
-    public TextMeshProUGUI textTMP;
-    public GameObject textGO;
-    public bool activated = false;
+    [SerializeField] public BattleState state;
+    [SerializeField] public GameObject tilemapPortee;
+    [SerializeField] public GameObject tilemapvisee;
+    [SerializeField] public GameObject actionButton;
+    [SerializeField] public GameObject endTurnButton;
+    [SerializeField] public TextMeshProUGUI textTMP;
+    [SerializeField] public GameObject textGO;
+    [SerializeField] public bool activated = false;
     [SerializeField] int ZNumber;
     public AudioClip finishFight;
 

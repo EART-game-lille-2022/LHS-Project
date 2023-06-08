@@ -8,17 +8,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject smartphone;
     [SerializeField] List<GameObject> lifePointGameObject;
     [SerializeField] List<GameObject> energyPointGameObject;
-    void Start()
-    {
-        
-    }
+    [SerializeField] List<GameObject> target;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void PointShow(bool active,GameObject icon)
+    public void PointShow(bool active,GameObject icon)
     {
         if (active)
         {
@@ -26,11 +18,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void SlideIn(bool active) 
+    public void SlideIn(bool active) 
     {
         if (active)
         {
-            smartphone.transform.DOMoveX(target);
+            smartphone.transform.DOMove(target[1].transform.position,0.5f);
         }
+        else
+            smartphone.transform.DOMove(target[0].transform.position, 0.5f);
     }
 }
