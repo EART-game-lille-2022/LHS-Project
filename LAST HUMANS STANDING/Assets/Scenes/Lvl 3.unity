@@ -14637,6 +14637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146295c20c6a4e14f9adf80a95ee4346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GunAudioClip: {fileID: 8300000, guid: 4c843583f6069644ba8eacf1b0a884db, type: 3}
   cam: {fileID: 519420031}
   tilemapPortee: {fileID: 429016715}
   tilemapDebug: {fileID: 552837191}
@@ -14647,8 +14648,9 @@ MonoBehaviour:
   tilePortee: {fileID: 0}
   tileDebug: {fileID: 0}
   tileKill: {fileID: 0}
-  playerMove: {fileID: 818171557}
-  playerAttack: {fileID: 818171559}
+  sampleDir: 0
+  ennemyPattern: 
+  playerMvt: {fileID: 0}
   battleSys: {fileID: 735924296}
   Zombie: {fileID: 1999121680}
 --- !u!212 &227027053
@@ -23674,6 +23676,7 @@ MonoBehaviour:
   textGO: {fileID: 2100239983}
   activated: 0
   ZNumber: 3
+  finishFight: {fileID: 0}
 --- !u!4 &735924297
 Transform:
   m_ObjectHideFlags: 0
@@ -23814,13 +23817,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initiative: 10
   isMyturn: 0
-  canvas: {fileID: 293183070}
-  uiManager: {fileID: 0}
   teleport: {fileID: 227027054}
   playerTileMaps: {fileID: 429016712}
   playerTileMapKill: {fileID: 168235411}
   canMove: 0
   deplacementPoint: 0
+  playerTurn: {fileID: 8300000, guid: 2bb174f2e783bd1478fd199e7022a8eb, type: 3}
+  playerStep: {fileID: 8300000, guid: de077e4d592d2a243b4b6fb2c63271de, type: 3}
+  canvas: {fileID: 293183070}
 --- !u!70 &818171558
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23849,7 +23853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d93609a1bf3ee42b34859cc64e69fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 5
 --- !u!1 &854936876
 GameObject:
   m_ObjectHideFlags: 0
@@ -24323,11 +24326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initiative: 0
   isMyturn: 0
-  debugTilemap: {fileID: 552837191}
   battleSystem: {fileID: 735924296}
   col2D: {fileID: 959235019}
   inFight: 0
-  Target: {fileID: 818171555}
+  zombieGrowl: {fileID: 0}
 --- !u!50 &959235021
 Rigidbody2D:
   serializedVersion: 4
@@ -24377,12 +24379,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1256a3d83ec8547bea687c1b60daad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
   health: 0
-  LifeBar: {fileID: 0}
   ZombieDamageClip: {fileID: 0}
+  MaxHealth: 0
   battleSystem: {fileID: 735924296}
   dead: 0
+  zombieDeath: {fileID: 0}
+  amount: 0
 --- !u!4 &959235024
 Transform:
   m_ObjectHideFlags: 0
@@ -25744,6 +25747,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9088736696801814507, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
+      propertyPath: zombieDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ab3fc830a706564da91d91ca3be474e, type: 3}
+    - target: {fileID: 9088736696801814507, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: battleSystem
       value: 
       objectReference: {fileID: 735924296}
@@ -25751,6 +25758,10 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 818171555}
+    - target: {fileID: 9088736696801814511, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
+      propertyPath: zombieGrowl
+      value: 
+      objectReference: {fileID: 8300000, guid: d50192e9ecefb6e41b002c9b9a389358, type: 3}
     - target: {fileID: 9088736696801814511, guid: 1d78a304f68751a4f9077e4c7f4f2389, type: 3}
       propertyPath: battleSystem
       value: 
