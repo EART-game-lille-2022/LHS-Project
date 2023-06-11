@@ -7,6 +7,7 @@ public enum BattleState { NOFIGHT, STARTFIGHT, PLAYERTURN, ENNEMYTURN, NEWENNEMI
 public class BattleSystem : MonoBehaviour
 {
     [SerializeField] public BattleState state;
+    [SerializeField] public UIManager manager;
     [SerializeField] public GameObject tilemapPortee;
     [SerializeField] public GameObject tilemapvisee;
     [SerializeField] public GameObject actionButton;
@@ -39,8 +40,9 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator StartFight()
     {
+        manager.SlideIn(true);
         textGO.SetActive(true);
-        textTMP.text = "un zombie vous a rep�r�!";
+        textTMP.text = "un zombie vous a apercu!";
         yield return new WaitForSeconds(1);
         textTMP.text = "tuez le !";
         yield return new WaitForSeconds(1);
@@ -89,6 +91,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator FinishFight()
     {
+        manager.SlideIn(false);
         state = BattleState.WIN;
         state = BattleState.NOFIGHT;
         tilemapPortee.SetActive(true);

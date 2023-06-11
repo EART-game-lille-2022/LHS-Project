@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
         {
             icon.SetActive(true);
         }
+        else
+        {
+            icon.SetActive(false);
+        }
     }
 
     public void SlideIn(bool active) 
